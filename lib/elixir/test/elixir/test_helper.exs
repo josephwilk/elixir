@@ -1,5 +1,13 @@
 ExUnit.start [trace: "--trace" in System.argv]
 
+defmodule Fixtures do
+  defmacro keep do
+    quote location: :keep do
+      raise "error"
+    end
+  end
+end
+
 defmodule PathHelpers do
   def fixture_path() do
     Path.expand("../fixtures", __FILE__)

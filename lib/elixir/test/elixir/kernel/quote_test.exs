@@ -408,4 +408,10 @@ defmodule Kernel.QuoteTest.ImportsHygieneTest do
     assert with_size == 2
     assert with_nested_size == 2
   end
+
+  require Fixtures
+  test ":keep location where macro is in a different file" do
+    Fixtures.keep()
+  end
+
 end
